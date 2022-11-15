@@ -1,4 +1,8 @@
 --Please First Create Database with "Test" Name
+
+
+
+
 CREATE TABLE [dbo].[Department](
 	[DepartmentID] [int] IDENTITY(1,1) NOT NULL,
 	[DepartmentName] [nvarchar](50) NOT NULL,
