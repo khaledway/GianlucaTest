@@ -31,10 +31,11 @@ namespace WebApplication3.Controllers
 
 
 
+        #region GetAllEmployee
         List<EmployeeViewModel> GetAllEmployee(string name)
         {
             List<EmployeeViewModel> list = null;
-            var EmployeeList = db.Employee.Where(s=> (string.IsNullOrEmpty(name)? true: s.EmloyeeName.Trim().ToLower().Contains(name.Trim().ToLower()))).ToList();
+            var EmployeeList = db.Employee.Where(s => (string.IsNullOrEmpty(name) ? true : s.EmloyeeName.Trim().ToLower().Contains(name.Trim().ToLower()))).ToList();
             list = EmployeeList.Select(s => new EmployeeViewModel()
             {
                 DepartmentID = s.DepartmentID,
@@ -44,7 +45,8 @@ namespace WebApplication3.Controllers
                 HireDate = s.HireDate
             }).ToList();
             return list;
-        }
+        } 
+        #endregion
 
     }
 }
